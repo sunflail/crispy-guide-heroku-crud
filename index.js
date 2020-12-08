@@ -1,8 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const server = express();
+const cors = require("cors");
 
 server.use(bodyParser.json());
+server.use(cors());
 
 // this command checks for the port to be open
 // process.env.PORT
