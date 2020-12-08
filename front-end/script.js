@@ -1,4 +1,5 @@
 const url = "https://sunflail-crud-demo.herokuapp.com/employees";
+const herokuUrl = "/employees";
 
 // get the input information when the button is clicked
 const myForm = document.querySelector("#myForm");
@@ -16,7 +17,7 @@ myForm.onsubmit = (event) => {
   // pass the info via CRUD to the back end server
   // send this object via POST to https://sunflail-crud-demo.herokuapp.com/employees
 
-  axios.post(url, userObj).then((res) => {
+  axios.post(herokuUrl, userObj).then((res) => {
     console.log(res.data);
   });
 
@@ -30,7 +31,7 @@ showAllBtn.onclick = (event) => {
 
 function showAllEmpInfo(event) {
   let allEmpsInfo;
-  axios.get(url).then((res) => {
+  axios.get(herokuUrl).then((res) => {
     allEmpsInfo = res.data;
     let dataP = document.createElement("p");
     dataP.innerHTML = JSON.stringify(allEmpsInfo);
