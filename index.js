@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const server = express();
 const cors = require("cors");
+server.use("/static", express.static(path.join(__dirname, "front-end")));
 
 server.use(bodyParser.json());
 server.use(cors());
