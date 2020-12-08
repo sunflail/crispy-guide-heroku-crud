@@ -78,3 +78,9 @@ server.delete("/employees/:id", (req, res) => {
   employees.splice(empIdx, 1);
   res.send({ success: "Success" });
 });
+
+//route to return the webpage front end
+server.get("/", (req, res) => {
+  //   res.send("Hello World");
+  res.sendFile(__dirname + "/front-end/index.html");
+});
